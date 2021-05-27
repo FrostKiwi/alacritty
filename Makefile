@@ -1,4 +1,4 @@
-TARGET = alacritty
+TARGET = alacritty 
 
 ASSETS_DIR = extra
 RELEASE_DIR = target/release
@@ -26,7 +26,7 @@ vpath $(DMG_NAME) $(APP_DIR)
 
 all: help
 
-help: ## Prints help for targets with comments
+help: # Prints help for targets with comments
 	@grep -E '^[a-zA-Z._-]+:.*?## .*$$' $(MAKEFILE_LIST) | sort | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}'
 
 binary: | $(TARGET) ## Build release binary with cargo
